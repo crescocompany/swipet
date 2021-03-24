@@ -3,24 +3,52 @@
 import "dotenv/config"
 import "reflect-metadata"
 
-import express from 'express';
-import { createConnection } from "typeorm";
+import express, { Request, Response } from 'express';
 
-const port = process.env.API_PORT || 3000;
+import cookieParser from 'cookie-parser';
+import { createConnection } from "typeorm";
+import { ApolloServer } from 'apollo-server-express';
+
+import { types, resolvers } from './graphql'
+
+const {
+  PORT,
+  NODE_ENV,
+  FRONTEND_URI
+} = process.env;
+
+const port = PORT || 3000;
+const prod = NODE_ENV === 'production' || false;
 
 (async () => {
-  /**
-   * Turn on the lights
-   */
-  const engine = express()
-  engine.enable('trust proxy')
+  try {
+    /**
+     * Turn on the lights
+     */
+    const app = express()
+    app.enable('trust proxy')
+    app.use(cookieParser())
+ 
+    const connection = await createConnection();
+ 
+    if (prod) {
+      connection.runMigrations();
+    }
 
-  const connection = await createConnection();
+    const server = new ApolloServer({
+      context: ({ req, res }: { req: Request, res: Response }) => ({
+        req, res
+      }),
+      introspection: !prod,
+      playground: !prod,
+      typeDefs: types(),
+      resolvers
+    });
 
-  if (process.env.NODE_ENV === 'production') {
-    connection.runMigrations();
-  }
-  
-  engine.get('/', (req, res) => res.send('Hey!'));
-  engine.listen(port, () => console.log(`🚀 Server is listening on http://localhost:%s`, port));
+    server.applyMiddleware({
+      app, path: '/', cors: { credentials: true, origin: !prod ? true : FRONTEND_URI }
+    });
+   
+    app.listen(port, () => console.log(`🚀 Server is listening on http://localhost:%s`, port));
+  } catch (error) { console.log(error) }
 })();
