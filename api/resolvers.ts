@@ -1,9 +1,5 @@
-import fs from 'fs';
-
-import { gql } from 'apollo-server-express';
+import { resolveSrv } from 'node:dns';
 import { User } from './src/entity/User';
-
-export const types = () => gql(fs.readFileSync(__dirname.concat('/schema.graphql'), 'utf8'));
 
 export const resolvers = {
   Query: {
@@ -16,3 +12,5 @@ export const resolvers = {
     }
   }
 }
+
+export default resolvers;

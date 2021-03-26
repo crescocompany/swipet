@@ -3,13 +3,14 @@
 import "dotenv/config"
 import "reflect-metadata"
 
+import fs from 'fs';
 import express, { Request, Response } from 'express';
 
 import cookieParser from 'cookie-parser';
 import { createConnection } from "typeorm";
-import { ApolloServer } from 'apollo-server-express';
+import { gql, ApolloServer } from 'apollo-server-express';
 
-import { types, resolvers } from './graphql'
+import { resolvers } from './resolvers'
 
 const {
   PORT,
@@ -41,7 +42,7 @@ const prod = NODE_ENV === 'production' || false;
       }),
       introspection: !prod,
       playground: !prod,
-      typeDefs: types(),
+      typeDefs: gql(fs.readFileSync(__dirname.concat('/schema.graphql'), 'utf8')),
       resolvers
     });
 
