@@ -10,6 +10,7 @@ function App() {
         <p>
           Swipet - A home for your pet
         </p>
+
       </header>
     </div>
   );

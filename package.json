@@ -18,7 +18,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "prebuild": "npm run build:tailwind",
     "build": "react-scripts build",
+    "build:tailwind": "postcss tailwind.css -o src/tailwind.css",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -39,5 +41,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss7-compat": "^2.0.4",
+    "autoprefixer": "^9.8.6",
+    "postcss": "^7.0.35",
+    "postcss-cli": "^7.1.2",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3"
   }
 }

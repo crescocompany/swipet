@@ -11,6 +11,9 @@ node_modules
 # production
 /build
 
+
+src/tailwind.css
+
 # misc
 .DS_Store
 .env
