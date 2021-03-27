@@ -17,6 +17,7 @@ function App() {
           <Switch>
             <Route exact path={['/', 'dashboard']}>
               <Header />
+              <Cards />
             {/* Cards */}
             {/* Buttons */}
             </Route>
