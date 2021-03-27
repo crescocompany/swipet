@@ -6,7 +6,7 @@ interface Props {
 }
 
 const Card: FC<Props> = (props) => (
-  <div className="max-w-sm rounded overflow-hidden shadow-xl mx-auto mb-7" key={props.key}>
+  <div className="max-w-lg rounded overflow-hidden shadow-xl mx-auto mb-7" key={props.key}>
     <img className='w-full object-cover h-96' src={props.img ?? ''} alt='nice pet' />
     <div className="px-6 py-4">
       <span className="font-bold text-xl mb-2">Boris, 123</span>
