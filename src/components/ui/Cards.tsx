@@ -10,19 +10,24 @@ const Cards: FC = () => {
   const premium = false;
 
   useEffect(() => {
-    fetch(FAKE_API)
-      .then(response => response.json())
-      .then(data => setPets(data['message']));
+    fetch(FAKE_API).then(response => response.json()).then(data => setPets(data['message']));
   }, [setPets])
 
-  const decline = () => alert('Not for me!');
+  const submit = () => fetch(FAKE_API).then(response => response.json()).then(data => setPets(data['message']));
 
-  const like = (superpower = false) => {
-    alert('Liked!');
+  const decline = async () => {
+    console.log('Not for me!');
+
+    await submit();
+  }
+  const like = async (superpower = false) => {
+    console.log('Liked!');
 
     if (superpower) {
-      alert('by power!');
+      console.log('by power!');
     }
+
+    await submit();
   };
 
   return (
