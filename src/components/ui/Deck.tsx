@@ -4,13 +4,13 @@ import { Card } from ".";
 
 const FAKE_API = 'https://dog.ceo/api/breeds/image/random/1';
 
-const Cards: FC = () => {
+const Deck: FC = () => {
   const [pets, setPets] = useState([]);
 
   const premium = false;
 
   useEffect(() => {
-    fetch(FAKE_API).then(response => response.json()).then(data => setPets(data['message']));
+    fetch(FAKE_API).then(response => response.json()).then(data => setPets(data['message']))
   }, [setPets])
 
   const submit = () => fetch(FAKE_API).then(response => response.json()).then(data => setPets(data['message']));
@@ -57,4 +57,4 @@ const Cards: FC = () => {
   );
 };
 
-export default Cards;
+export default Deck;

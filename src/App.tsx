@@ -4,7 +4,7 @@ import {
   Route
 } from "react-router-dom";
 
-import { Header, Cards } from './components/ui';
+import { Header, Deck } from './components/ui';
 
 import logo from './logo.svg';
 import './App.css';
@@ -17,13 +17,12 @@ function App() {
           <Switch>
             <Route exact path={['/', 'dashboard']}>
               <Header />
-              <Cards />
-            {/* Cards */}
-            {/* Buttons */}
+              <Deck />
+              {/* Cards */}
+              {/* Buttons */}
             </Route>
-          <Route exact path='/cards' component={Cards} />
-          <Route exact path='/react'>
-            <div className='App'>
+            <Route exact path='/react'>
+              <div className='App'>
                 <header className="App-header">
                   <img src={logo} className="App-logo" alt="logo" />
                   <p>
@@ -31,11 +30,11 @@ function App() {
                   </p>
                 </header>
               </div>
-          </Route>
+            </Route>
           </Switch>
-          </BrowserRouter>    
-       </div>
+        </BrowserRouter>
       </div>
+    </div>
   );
 }
 
