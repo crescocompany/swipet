@@ -19,13 +19,9 @@
     "build": "react-scripts build",
     "build:tailwind": "postcss tailwind.css -o src/style/tailwind.css",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "eject": "react-scripts eject",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix"
   },
   "browserslist": {
     "production": [
@@ -49,7 +45,11 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-router-dom": "^5.1.7",
+    "@typescript-eslint/eslint-plugin": "^4.27.0",
+    "@typescript-eslint/parser": "^4.27.0",
     "autoprefixer": "^9.8.6",
+    "eslint": "^7.29.0",
+    "eslint-plugin-react": "^7.24.0",
     "postcss": "^7.0.35",
     "postcss-cli": "^7.1.2",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3",

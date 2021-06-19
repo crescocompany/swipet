@@ -1,7 +1,7 @@
 import { FC, StrictMode } from 'react';
 import { render } from 'react-dom';
 import { HelmetProvider } from 'react-helmet-async';
-import { ApolloProvider } from './modules/ApolloProvider'
+import { ApolloProvider } from './modules/ApolloProvider';
 
 import './style/index.css';
 import './style/tailwind.css';

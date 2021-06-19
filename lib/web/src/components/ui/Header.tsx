@@ -1,5 +1,5 @@
-import { FC } from "react";
-import { HiUser } from 'react-icons/hi'
+import { FC } from 'react';
+import { HiUser } from 'react-icons/hi';
 
 const Header: FC = () => (
   <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
@@ -11,6 +11,6 @@ const Header: FC = () => (
       </button>
     </nav>
   </div>
-)
+);
 
 export default Header;

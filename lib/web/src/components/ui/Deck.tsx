@@ -1,6 +1,6 @@
-import { FC, useEffect, useState } from "react";
-import { HiHeart, HiX, HiStar, HiRefresh } from "react-icons/hi";
-import { Card } from ".";
+import { FC, useEffect, useState } from 'react';
+import { HiHeart, HiX, HiStar, HiRefresh } from 'react-icons/hi';
+import { Card } from '.';
 
 const FAKE_API = 'https://dog.ceo/api/breeds/image/random/1';
 
@@ -10,8 +10,8 @@ const Deck: FC = () => {
   const premium = false;
 
   useEffect(() => {
-    fetch(FAKE_API).then(response => response.json()).then(data => setPets(data['message']))
-  }, [setPets])
+    fetch(FAKE_API).then(response => response.json()).then(data => setPets(data['message']));
+  }, [setPets]);
 
   const submit = () => fetch(FAKE_API).then(response => response.json()).then(data => setPets(data['message']));
 
@@ -19,7 +19,7 @@ const Deck: FC = () => {
     console.log('Not for me!');
 
     await submit();
-  }
+  };
   const like = async (superpower = false) => {
     console.log('Liked!');
 

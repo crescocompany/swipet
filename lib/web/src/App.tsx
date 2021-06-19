@@ -1,15 +1,15 @@
+import { FC } from 'react';
 import {
   BrowserRouter,
   Switch,
   Route
-} from "react-router-dom";
+} from 'react-router-dom';
 
 import { Header, Deck } from './components/ui';
 
 import logo from './logo.svg';
-import './App.css';
 
-function App() {
+const App: FC = () => {
   return (
     <div className='relative bg-grey'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6'>
@@ -36,6 +36,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
