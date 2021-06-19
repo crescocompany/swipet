@@ -17,7 +17,7 @@
     "start": "react-scripts start",
     "prebuild": "npm run build:tailwind",
     "build": "react-scripts build",
-    "build:tailwind": "postcss tailwind.css -o src/tailwind.css",
+    "build:tailwind": "postcss tailwind.css -o src/style/tailwind.css",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
