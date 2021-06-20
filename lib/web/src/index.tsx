@@ -10,9 +10,7 @@ import App from './App';
 
 const Providers: FC = ({ children }) => (
   <ApolloProvider>
-    <HelmetProvider>
-      {children}
-    </HelmetProvider>
+    <HelmetProvider>{children}</HelmetProvider>
   </ApolloProvider>
 );
 
