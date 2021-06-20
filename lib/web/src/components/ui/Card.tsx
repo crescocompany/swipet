@@ -1,9 +1,12 @@
 import { FC } from 'react';
+import Pill from './Pill';
 
-const Card: FC<{
+interface CardProps {
   img: string;
   key: number;
-}> = ({ img, key }) => (
+}
+
+const Card: FC<CardProps> = ({ img, key }) => (
   <div
     className="max-w-lg rounded overflow-hidden shadow-xl mx-auto mb-7"
     key={key}
@@ -16,16 +19,10 @@ const Card: FC<{
         quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
         nihil.
       </p>
-      <div className="px-6 pt-4 pb-2">
-        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-          Rashond
-        </span>
-        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-          Senior
-        </span>
-        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-          Weet ik het
-        </span>
+      <div className="px-4 pt-4 pb-2">
+        <Pill value="Rashond" />
+        <Pill value="Senior" />
+        <Pill value="..." />
       </div>
     </div>
   </div>

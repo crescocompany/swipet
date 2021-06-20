@@ -36,7 +36,7 @@ const Deck: FC = () => {
   };
 
   return (
-    <div className="p-10">
+    <div className="px-10 py-7">
       {pets.map((pet, index) => (
         <Card key={index} img={pet} />
       ))}
