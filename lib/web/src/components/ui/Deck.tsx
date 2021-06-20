@@ -1,13 +1,12 @@
 import { FC, useEffect, useState } from 'react';
-import { HiHeart, HiX, HiStar, HiRefresh } from 'react-icons/hi';
+import { HiHeart, HiX, HiStar } from 'react-icons/hi';
 import { Card } from '.';
+import ActionButton from './ActionButton';
 
 const FAKE_API = 'https://dog.ceo/api/breeds/image/random/1';
 
 const Deck: FC = () => {
   const [pets, setPets] = useState([]);
-
-  const premium = false;
 
   useEffect(() => {
     fetch(FAKE_API)
@@ -42,32 +41,14 @@ const Deck: FC = () => {
       ))}
 
       <div className="mx-auto items-center text-center w-full">
-        {premium && (
-          <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold p-4 mr-4 rounded-xl inline-flex align-middle">
-            <HiRefresh className="w-8 h-8" />
-          </button>
-        )}
-
-        <button
-          className="bg-gray-200 hover:bg-gray-400 text-gray-800 font-bold p-4 mr-4 rounded-xl inline-flex align-middle"
-          onClick={() => decline()}
-        >
-          <HiX className="fill-current w-8 h-8 text-red" />
-        </button>
-
-        <button
-          className="bg-gray-200 hover:bg-gray-400 text-gray-800 font-bold p-4 mr-4 rounded-xl inline-flex align-middle"
+        <ActionButton color="red" icon={HiX} onClick={() => decline()} />
+        <ActionButton
+          small
+          color="blue"
+          icon={HiStar}
           onClick={() => like(true)}
-        >
-          <HiStar className="fill-current w-5 h-5 text-blue" />
-        </button>
-
-        <button
-          className="bg-gray-200 hover:bg-gray-400 text-gray-800 font-bold p-4 mr-4 rounded-xl inline-flex align-middle"
-          onClick={() => like()}
-        >
-          <HiHeart className="fill-current w-8 h-8 text-green" />
-        </button>
+        />
+        <ActionButton color="green" icon={HiHeart} onClick={() => like()} />
       </div>
     </div>
   );

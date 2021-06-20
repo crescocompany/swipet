@@ -3,14 +3,10 @@ import Pill from './Pill';
 
 interface CardProps {
   img: string;
-  key: number;
 }
 
-const Card: FC<CardProps> = ({ img, key }) => (
-  <div
-    className="max-w-lg rounded overflow-hidden shadow-xl mx-auto mb-7"
-    key={key}
-  >
+const Card: FC<CardProps> = ({ img }) => (
+  <div className="max-w-lg rounded overflow-hidden shadow-xl mx-auto mb-7">
     <img className="w-full object-cover h-96" src={img ?? ''} alt="nice pet" />
     <div className="px-6 py-4">
       <span className="font-bold text-xl mb-2">Boris, 123</span>
