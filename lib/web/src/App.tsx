@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import { Header, Deck } from './components/ui';
+import { Header, Deck } from './modules';
 
 const App: FC = () => {
   return (
