@@ -20,8 +20,8 @@
     "build:tailwind": "postcss tailwind.css -o src/style/tailwind.css",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src",
-    "lint:fix": "eslint src --fix"
+    "lint": "eslint --cache src",
+    "format": "prettier --write src"
   },
   "browserslist": {
     "production": [
@@ -49,9 +49,11 @@
     "@typescript-eslint/parser": "^4.27.0",
     "autoprefixer": "^9.8.6",
     "eslint": "^7.29.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "postcss": "^7.0.35",
     "postcss-cli": "^7.1.2",
+    "prettier": "^2.3.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3",
     "typescript": "^4.1.2"
   }
