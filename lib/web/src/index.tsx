@@ -18,11 +18,15 @@ const Providers: FC = ({ children }) => (
 render(
   <StrictMode>
     <Providers>
-      <BrowserRouter>
-        <Switch>
-          <Route exact path={['/', 'dashboard']} component={Dashboard} />
-        </Switch>
-      </BrowserRouter>
+      <div className="relative bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <BrowserRouter>
+            <Switch>
+              <Route exact path={['/', 'dashboard']} component={Dashboard} />
+            </Switch>
+          </BrowserRouter>
+        </div>
+      </div>
     </Providers>
   </StrictMode>,
   document.getElementById('root')
