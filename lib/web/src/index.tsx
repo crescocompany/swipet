@@ -4,7 +4,6 @@ import { HelmetProvider } from 'react-helmet-async';
 import { ApolloProvider } from './modules/ApolloProvider';
 
 import './style/index.css';
-import './style/tailwind.css';
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Dashboard } from './pages/Dashboard';
